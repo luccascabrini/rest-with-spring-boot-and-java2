@@ -22,20 +22,9 @@ public class PersonServices {
 		}
 		return persons ;
 	}
-	private Person mockPerson(int i) {
-		logger.info("Finding all people!");
-		
-		Person person =  new Person();
-		person.setId(counter.incrementAndGet());
-		person.setFirstName("Person name " + i);
-		person.setLastName("Last name " + i);
-		person.setAdress("Some address in Brasil " + i);
-		person.setGender("Male");
-		return person;
-	}
+	
 	public Person findById(String id) {
 		logger.info("Finding one person!");
-		
 		Person person =  new Person();
 		person.setId(counter.incrementAndGet());
 		person.setFirstName("Luccas");
@@ -44,5 +33,31 @@ public class PersonServices {
 		person.setGender("Male");
 		return person;
 	}
+	
+	public Person create(Person person) {
+		logger.info("Creating one person!");
+		return person;
+	}
+	
+	public Person update(Person person) {
+		logger.info("Updating one person!");
+		return person;
+	}
+	
+	public void delete(String id) {
+		logger.info("Deleting one person!");
+	}
+	
+	private Person mockPerson(int i) {
+		logger.info("Finding all people!");
+		Person person =  new Person();
+		person.setId(counter.incrementAndGet());
+		person.setFirstName("Person name " + i);
+		person.setLastName("Last name " + i);
+		person.setAdress("Some address in Brasil " + i);
+		person.setGender("Male");
+		return person;
+	}
+	
 	
 }
